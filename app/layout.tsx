@@ -1,28 +1,28 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import Header from "./components/navigation/Header";
 import Sidenav from "./components/navigation/Sidenav";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: "--font-nunito",
+});
 
 export const metadata: Metadata = {
   title: "Ogechi Ikwunagu's Portfolio",
   description: "Welcome to Ogechi Ikwunagu's digital portfolio, where each website and web application is meticulously designed, SEO-optimized, and created with love and the user's experience in mind.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} overflow-x-hidden`}>
+      <body className={`${nunito.variable} overflow-x-hidden`}>
         <Header />
         <Sidenav />
         {children}
-        </body>
+      </body>
     </html>
   );
 }

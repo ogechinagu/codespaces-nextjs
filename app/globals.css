@@ -18,16 +18,68 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.linearGradient {
+  background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border: 1px solid #8080802f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e6e6e6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
+@layer base {
+  .active {
+    @apply text-secondary relative flex-1 after:w-full after:h-[1px] after:bg-secondary sfter:absolute after:-bottom-3 after:right-0;
+  }
+
+  .h1 {
+    @apply text-[48px] leading-tight md:text-[72px] md:leading-[1.3] mb-8 font-bold;
+  }
+
+  .h2 {
+    @apply text-[38px] leading-tight md:text-[55px] md:leading-[1.3] mb-4 font-extrabold;
+  }
+
+  .h3 {
+    @apply text-[32px] leading-tight md:text-[36px] md:leading-[1.3] mb-4 font-extrabold;
+  }
+
+  .p {
+    @apply leading-[1.3] text-[14pxpx] text-gray-50;
+  }
+}
+
+@layer utilities {
+  .btn_white_rounded {
+    @apply medium-15 border border-white bg-white px-7 py-3 text-gray-90 rounded-full
+  }
+
+  .btn_white_hover {
+    @apply text-[14px] font-[500] border border-white bg-white px-7 py-2 text-gray-90 rounded-full hover:border-black hover:bg-black hover:text-white transition-all duration-300
   }
 }

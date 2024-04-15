@@ -1,8 +1,16 @@
+import Link from "next/link"
+
 const Header = () => {
     return (
-        <section>
-            Headers
-        </section>
+        <header className="flex">
+            <Link href={'/'}>
+                <p className="text-lg font-black tracking-tight text-sky-600">OGECHINAGU</p>
+            </Link>
+            <div>
+                
+            </div>
+
+        </header>
     )
 }
 
